@@ -1,16 +1,15 @@
 
-```markdown
 # InvoiceAI - Automated Invoice Processing  
-🚀 **Live Demo**: [InvoiceAI on Render](https://invoiceai-50xd.onrender.com)  
+**Live Demo**: [InvoiceAI on Render](https://invoiceai-50xd.onrender.com)  
 
 ## Overview  
 InvoiceAI is a **Streamlit-based web application** that extracts relevant information from invoices using **Google Gemini AI** and **OCR techniques**. The tool enables businesses and individuals to **automate invoice processing, extract key details, and organize financial data efficiently.**  
 
 ## Features  
-✅ Upload invoice images (JPG, PNG, PDF)  
+✅ Upload invoice images (JPG, PNG)  
 ✅ Extract text & key details (Invoice No, Date, Amount, etc.)  
 ✅ AI-powered invoice data extraction using Google Gemini  
-✅ Supports multiple formats (PDF, Image)  
+✅ Supports multiple language
 ✅ Easy-to-use web interface with Streamlit  
 ✅ Deployed on Render for seamless access  
 
@@ -47,8 +46,7 @@ streamlit run app.py
 
 ## Deployment on Render  
 The project is deployed on [Render](https://render.com/), ensuring **high availability and scalability**. You can access it here:  
-🌍 **[InvoiceAI Live](https://invoiceai-50xd.onrender.com)**  
+ **[InvoiceAI Live](https://invoiceai-50xd.onrender.com)**  
 
 ## Contributing  
 We welcome contributions! Feel free to open issues, submit PRs, or suggest improvements.  
-```
