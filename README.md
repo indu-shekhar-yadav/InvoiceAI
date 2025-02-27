@@ -9,7 +9,7 @@ InvoiceAI is a **Streamlit-based web application** that extracts relevant inform
 ✅ Upload invoice images (JPG, PNG)  
 ✅ Extract text & key details (Invoice No, Date, Amount, etc.)  
 ✅ AI-powered invoice data extraction using Google Gemini  
-✅ Supports multiple language
+✅ Supports multiple language  
 ✅ Easy-to-use web interface with Streamlit  
 ✅ Deployed on Render for seamless access  
 
