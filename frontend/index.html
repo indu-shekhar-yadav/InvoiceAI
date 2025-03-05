@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice AI Extractor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f3f3f3;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 300px;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        .response {
+            margin-top: 20px;
+            padding: 10px;
+            background: #e3e3e3;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Invoice AI Extractor</h2>
+        <input type="text" id="inputText" placeholder="Enter input prompt">
+        <input type="file" id="fileInput" accept="image/*">
+        <button onclick="submitForm()">Extract Invoice Data</button>
+        <div id="response" class="response"></div>
+    </div>
+    <script>
+        async function submitForm() {
+            const inputText = document.getElementById('inputText').value;
+            const fileInput = document.getElementById('fileInput').files[0];
+            const responseDiv = document.getElementById('response');
+            
+            if (!inputText || !fileInput) {
+                alert("Please enter input text and upload an image.");
+                return;
+            }
+            
+            const formData = new FormData();
+            formData.append("input_text", inputText);
+            formData.append("uploaded_file", fileInput);
+            
+            responseDiv.innerHTML = "Processing...";
+            
+            try {
+                const response = await fetch("http://127.0.0.1:8000/extract_invoice", {
+                    method: "POST",
+                    body: formData
+                });
+                const data = await response.json();
+                responseDiv.innerHTML = `<strong>Response:</strong> <p>${data.response}</p>`;
+            } catch (error) {
+                responseDiv.innerHTML = "Error processing invoice. Please try again.";
+            }
+        }
+    </script>
+</body>
+</html>
