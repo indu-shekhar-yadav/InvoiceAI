@@ -11,7 +11,7 @@ load_dotenv()
 
 # Configure Gemini AI
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
-model = genai.GenerativeModel('gemini-1.5-pro')
+model = genai.GenerativeModel('gemini-2.5-pro')
 
 app = FastAPI()
 
